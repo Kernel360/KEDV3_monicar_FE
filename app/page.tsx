@@ -1,14 +1,23 @@
-import BaseInput from '@/components/common/Input/BaseInput'
-import SignInInput from '@/components/common/Input/SignInInput'
-import Header from '@/components/layout/Header'
+'use client'
+
+import { useModal } from '@/app/hooks/useModal'
+import Modal from '@/components/common/Modal'
 
 const HomePage = () => {
+    const { isOpen, openModal, closeModal } = useModal()
+
     return (
         <>
-            <Header title='asdfasd' isBackButton />
-            <SignInInput icon={'/icons/sign-in-user-icon.svg'} />
-            <SignInInput icon={'/icons/sign-in-lock-icon.svg'} type='password' />
-            <BaseInput />
+            <button onClick={openModal}>모달</button>
+            <Modal
+                isOpen={isOpen}
+                icon='/icons/black-alert-icon.svg'
+                message='정말 삭제하시겠습니까? 진짜요?'
+                confirmText='확인하기'
+                // closeText='취소하기'
+                onConfirm={closeModal}
+                onClose={closeModal}
+            />
         </>
     )
 }

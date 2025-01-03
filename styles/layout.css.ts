@@ -8,8 +8,5 @@ export const layoutContainer = style({
 export const mainContent = style({
     flex: 1,
 
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundImage: 'url("/images/sign-in-background-desktop.jpg")',
 })
